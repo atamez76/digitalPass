@@ -1,0 +1,102 @@
+.list {
+  list-style: none;
+  padding: 1rem;
+  border: 1px solid;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  background-color: white;
+  position: absolute;
+  right: 0;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.list_hidden {
+  list-style: none;
+  padding: 1rem;
+  border: 1px solid;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  background-color: white;
+  position: absolute;
+  right: 0;
+  opacity: 0;
+  visibility:hidden;
+}
+
+.list li {
+  margin: 0.5rem 0;
+  font-family: inherit;
+  font-size: 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.controls_column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.flex_controls {
+  display: flex;
+  width: 50%;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.invitation_btn {
+  padding: 0.5rem 1rem;
+  font-weight: 300;
+  border: 1px solid;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.invitation_btn:hover {
+  box-shadow: var(--box-shadow-selected);
+}
+
+.invitation_btn:active {
+  transform: scale(1.1);
+}
+
+.span_inline_block {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.flex_list_item{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.svg_icon{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.confirmation_message{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.message{
+  width: 100%;
+}
+
+.confirmation_controls{
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+
+
+

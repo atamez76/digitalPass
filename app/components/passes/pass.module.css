@@ -1,0 +1,15 @@
+.pass{
+   height: 22rem;
+   width: 12rem;
+    border: 1px solid var(--btn-color-primary);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    cursor: pointer;
+    font-size: .7rem;
+}
+
+.drag{
+    border:6px solid var(--color-primary)
+  }
+

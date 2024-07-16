@@ -1,0 +1,59 @@
+.control {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
+.picker {
+  margin-top: 1rem;
+  
+  gap: 1rem;
+}
+
+.picker .input {
+  display: none;
+}
+
+.picker .button {
+  background-color: #6db2e9;
+  padding: 0.8rem 2rem;
+  color: var(--font-color-secondary);
+  font-weight: 300;
+  box-shadow: var(--box-shadow);
+  border: none;
+ 
+}
+
+.button:disabled{
+  background-color: var(--btn-disabled);
+}
+
+.picker .button:hover,
+.picker .button:focus {
+  background: #b3b9c6;
+  box-shadow: var(--box-shadow-selected);
+}
+
+.preview {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #a4abb9;
+  position: relative;
+  border: 1px dashed var(--font-color-primary);
+}
+
+.preview p {
+  margin: 0;
+  padding: 1rem;
+}
+
+.preview img {
+  object-fit: cover;
+}

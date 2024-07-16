@@ -1,0 +1,18 @@
+.control {
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .picker .input {
+    display: none;
+  }
+  
+  .picker .button {
+    border: none;
+  }
+  
+  
+  
+
+  

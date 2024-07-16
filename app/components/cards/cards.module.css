@@ -1,0 +1,16 @@
+.SimpleCard{
+    height: 5rem;
+    width: 7rem;
+    border: 1px dotted var(--btn-color-secondary);
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: .3rem;
+    font-size: .7rem;
+    font-weight: bold;
+    color:var(--btn-color-secondary);
+    padding: 0 .3rem;
+}
+

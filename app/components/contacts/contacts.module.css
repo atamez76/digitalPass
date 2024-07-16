@@ -1,0 +1,50 @@
+.confirmation{
+  visibility: visible;
+  font-size: 60%;
+  padding: 1rem 1rem;
+  width: 98%;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.btns{
+  display: flex;
+  align-self: flex-end;
+}
+
+.btn_1{
+  background-color: #6db2e9;
+  padding: .5rem 1rem;
+  color: var(--font-color-secondary);
+  font-weight: 300;
+  box-shadow: var(--box-shadow);
+  border: none;
+  margin: 0 .5rem;
+}
+
+.btn_1:hover {
+  box-shadow: var(--box-shadow-selected);
+}
+
+.btn_1:active{
+  transform: scale(1.1);
+}
+
+.cards_holder{
+  display: flex;
+  gap: 1rem;
+  margin: 1rem;
+  justify-content: flex-end;
+}
+
+
+
+
+
+
+

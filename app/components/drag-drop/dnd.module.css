@@ -1,0 +1,53 @@
+.pass_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  width: 60%;
+  overflow-y: scroll;
+  justify-items: center;
+  height: 80vh;
+}
+
+.pass_grid::-webkit-scrollbar{
+  display: none;
+}
+
+.dropzone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--color-primary);
+  width: 14rem;
+  height: 22rem;
+  border-radius: 5px;
+}
+
+.dropzone_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  background-color: #6db2e9;
+  padding: 0.8rem 2rem;
+  color: var(--font-color-secondary);
+  font-weight: 300;
+  box-shadow: var(--box-shadow);
+  align-self: flex-end;
+  margin-top: 1rem;
+}
+
+.btn:hover {
+  box-shadow: var(--box-shadow-selected);
+}
+
+.placeholder{
+  color:var(--font-color-primary);
+  animation: blink-animation 1.5s steps(5, start) infinite;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+@keyframes blink-animation {
+  to {visibility:hidden;}
+}

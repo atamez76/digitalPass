@@ -1,0 +1,15 @@
+.pass{
+    height: 20rem;
+    width: 10rem;
+     border: 1px solid var(--btn-color-primary);
+     border-radius: 5px;
+     box-shadow: var(--box-shadow);
+     overflow: hidden;
+     transition: all .5s;
+ }
+
+ .pass:hover{
+    scale: 1.1;
+    box-shadow: var(--box-shadow-selected);
+ }
+ 

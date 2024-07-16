@@ -1,0 +1,3 @@
+gcxrV2LP5UBVmLMC
+
+mongodb+srv://atamez76:gcxrV2LP5UBVmLMC@cluster0.psmf4pm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0

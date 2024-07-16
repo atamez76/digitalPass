@@ -1,0 +1,5 @@
+.dnd_area{
+    display: flex;
+    height: 100vh;
+    gap:2rem
+  }

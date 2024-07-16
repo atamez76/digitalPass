@@ -1,0 +1,60 @@
+.list_item{
+    display: flex;
+    height: 1.5rem;
+    align-items: center;
+}
+
+.flag{
+    width: 3px;
+    height: 0px;
+}
+
+.active{
+    width: 3px;
+    height: 100%;
+    background-color: var(--font-color-primary);
+    animation: grow .8s
+}
+
+@keyframes grow {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.link_extended{
+    padding-left: .5rem;
+}
+
+.link_collapsed{
+    padding-left: 0px;
+}
+
+.tooltip{
+    display: inline-block;
+    position: relative;
+    width: 10rem;
+}
+
+.tooltip a{
+    color: var(--font-color-primary);
+}
+
+
+.tooltiptext{
+    position: absolute;
+    visibility: hidden;
+    font-size: 60%;
+    background-color: var(--tooltip-color);
+    color: var(--font-color-secondary);
+    border-radius: 5px;
+    padding: 5px;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility:visible;
+}

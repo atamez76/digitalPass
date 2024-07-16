@@ -1,0 +1,23 @@
+
+
+.map_wrapper{
+   display: flex;
+   flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.map_view{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.btn{
+    align-self: flex-end;
+    padding: 1rem 2rem;
+    background-color: var(--color-primary);
+    color: var(--font-color-secondary);
+    border: none;
+    box-shadow: var(--box-shadow);
+  }

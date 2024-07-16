@@ -1,0 +1,29 @@
+.color_data{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.color_selector_wrapper{
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btn{
+    border: none;
+    background: transparent;
+}
+
+.color_picker{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+

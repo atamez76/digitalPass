@@ -1,0 +1,47 @@
+.pass_image {
+    height: 40%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .pass_data {
+    font-size: inherit;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+    height: 60%;
+    align-items: center;
+  }
+  
+  .row {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+  }
+  
+  .control {
+    margin: 3% 0;
+    font-weight: 600;
+  }
+  
+  .control_1 {
+      margin: 5% 0;
+      font-weight: 300;
+    }
+  
+  
+  .text_shadow_pink{
+      text-shadow: 2px 1px 2px pink;
+  }
+
+  .control h2 {
+    text-align: center;
+  }
+
+  .text_center{
+    text-align: center;
+  }
+
+  

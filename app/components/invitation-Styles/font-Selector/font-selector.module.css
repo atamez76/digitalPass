@@ -1,0 +1,12 @@
+.form_control{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin: .5rem;
+  }
+
+  .form_control select{
+    height: 2rem;
+    border: 1px dotted var(--btn-color-secondary);
+    border-radius: 5px;
+  }

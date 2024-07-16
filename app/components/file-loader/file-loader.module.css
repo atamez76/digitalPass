@@ -1,0 +1,21 @@
+
+  
+  .picker .input {
+    display: none;
+  }
+  
+  .picker .button {
+    background-color: #6db2e9;
+    color: var(--font-color-secondary);
+    font-weight: 300;
+    box-shadow: var(--box-shadow);
+    border: none;
+    height: 2.5rem;
+    width: 8rem;
+  }
+  
+  .picker .button:hover,
+  .picker .button:focus {
+    background: #b3b9c6;
+    box-shadow: var(--box-shadow-selected);
+  }

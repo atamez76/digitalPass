@@ -1,0 +1,5 @@
+.control{
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 1.5rem 0;
+}

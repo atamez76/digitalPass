@@ -1,0 +1,55 @@
+.loader{
+    display: flex;
+    width: 4rem;
+    justify-content: space-evenly;
+    gap:.2rem;
+    margin: auto;
+}
+
+.loader_element_1{
+    border: 1px, solid white;
+    background-color: white;
+    border-radius: 100%;
+    height: .4rem;
+    width: .4rem;
+    animation-name: load;
+    animation-duration:1.5s;
+    animation-iteration-count: infinite;
+}
+
+.loader_element_2{
+    border: 1px, solid white;
+    background-color: white;
+    border-radius: 100%;
+    height: .4rem;
+    width: .4rem;
+    animation-name: load;
+    animation-delay: .5s;
+    animation-duration:1.5s;
+    animation-iteration-count: infinite;
+}
+
+.loader_element_3{
+    border: 1px, solid white;
+    background-color: white;
+    border-radius: 100%;
+    height: .4rem;
+    width: .4rem;
+    animation-name: load;
+    animation-delay: 1s;
+    animation-duration:1.5s;
+    animation-iteration-count: infinite;
+}
+
+.response {
+    background-color: var(--btn-color-secondary);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+  }
+
+@keyframes load {
+    from {background-color: white;}
+    to {background-color: rgb(199, 197, 197);border-color: rgb(199, 197, 197);}
+}

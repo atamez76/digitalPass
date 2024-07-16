@@ -1,0 +1,29 @@
+.user_settings_wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.user_settings{
+    background-color: var(--btm-color-secondary);
+    border: 0px solid var(--btn-color-primary);
+    padding: .3rem 1rem;
+    color: var(--font-color-secondary);
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.user_menu{
+    position: absolute;
+    transform: translate(10%, 50%);
+    background-color: var(--btn-color-secondary);
+    border-radius: 2px;
+    text-decoration: none;
+    color: var(--font-color-secondary);
+}
+
+.user_menu ul{
+    list-style-type: none;
+}

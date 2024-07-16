@@ -1,0 +1,110 @@
+.main{
+    justify-content: center;
+    padding: 1rem;
+    height: 100VH;
+}
+
+.section_header{
+    display: flex;
+    width: 100%;
+    margin-top: 1rem;
+    justify-content: space-between;
+    border-bottom: solid 1px var(--color-primary);
+    align-items: center;
+}
+
+.pageBody{
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 2rem;
+    height: 80%;
+    justify-items: center;
+}
+
+.pass_holder {
+    max-width: 30%;
+    min-width: 25rem;
+    border-radius: 3px;
+    border: 1px dotted var(--btn-color-secondary);
+  }
+
+  .pass {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+  }
+
+  .form_holder {
+    max-width: 100%;
+    min-width: 25rem;
+    height: 100%;
+  }
+
+
+.form{
+    width: 80%;
+    height: 90%;
+    border: 1px dotted var(--btn-color-secondary);
+    padding: 1rem 1rem;
+    border-radius: 3px;
+    margin: 1rem;
+}
+
+.form_control{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin: .5rem;
+}
+
+.form_control:last-child{
+    height: 4rem;
+}
+
+.form_control input{
+    height: 1.5rem;
+    border: 1px dotted var(--btn-color-secondary);
+    border-radius: 2px;
+}
+
+.form_control select{
+    height: 1.5rem;
+    border: 1px dotted var(--btn-color-secondary);
+    border-radius: 2px;
+}
+
+
+.form_control textarea{
+    border: 1px dotted var(--btn-color-secondary);
+    border-radius: 2px;
+}
+
+.btn{
+    align-self: flex-end;
+    padding: 1rem 2rem;
+    background-color: var(--color-primary);
+    color: var(--font-color-secondary);
+    border: none;
+    box-shadow: var(--box-shadow);
+    margin-bottom: .5rem;
+}
+
+.btn:hover{
+    box-shadow: var(--box-shadow-selected);
+}
+
+
+
+
+
+
+
+

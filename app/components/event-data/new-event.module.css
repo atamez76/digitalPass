@@ -1,0 +1,86 @@
+.new_event_wrapper {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  justify-content: space-between;
+}
+
+
+.pass_holder {
+  width: 40%;
+  border: 1px solid black;
+  border-radius: 3px;
+  border: 1px dotted var(--btn-color-secondary);
+}
+
+.pass {
+  width: 85%;
+  height: 85%;
+  max-width: 25rem;
+  margin: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+.form_holder {
+  height: 100%;
+}
+
+.property_holder {
+  width: 20%;
+  border: 1px solid black;
+  border-radius: 3px;
+  border: 1px dotted var(--btn-color-secondary);
+  padding: 0 1rem;
+  overflow-y: scroll;
+}
+
+.property_holder::-webkit-scrollbar{
+  display: none;
+}
+
+
+.property_holder h3{
+  margin-top: 2rem;
+  font-weight: 400;
+}
+
+.form_map_holder {
+  width: 40%;
+}
+
+.map_holder {
+  width: 800px;
+  height: 800px;
+  top: 0;
+  position: absolute;
+  transform: translate(30%, 20%);
+  z-index: 2;
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.overlay{
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 2rem 0;
+  min-height: 100vh;
+  margin:0 auto;
+  background-color: var(--btn-color-primary);
+  opacity: .5;
+  z-index: 1;
+}
+
+
+

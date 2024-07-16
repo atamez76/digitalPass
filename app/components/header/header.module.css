@@ -1,0 +1,27 @@
+.header{
+    background-image: var(--header-glow);
+    height: 3rem;
+    width: 100%;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+}
+
+.header_wrapper{
+    width: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 1.5rem;
+}
+
+.header p{
+    color: white;
+}
+
+.settings{
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    z-index: 1;
+}
