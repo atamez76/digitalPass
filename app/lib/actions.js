@@ -9,6 +9,8 @@ import {
   UpdateEmailSent,
   UpdateInvitationViewed,
   setConfirmation,
+  createNewAccount,
+  getOneUser,
 } from "./data";
 import { getNoOfEvents } from "./data";
 import { redirect } from "next/navigation";
@@ -18,7 +20,8 @@ import SendEmail from "./send-email";
 import handlebars from "handlebars";
 import { invitationTemplate } from "./emails/invitation-template";
 import Twilio from "twilio/lib/rest/Twilio";
-import { createShortUrl, decodeURL } from "shortlnk";
+import bcrypt from "bcryptjs";
+import { signIn, signOut } from "@/auth";
 
 const s3 = new S3({
   region: "us-east-1",
@@ -411,8 +414,7 @@ export async function sendWhatsapp(data, event_title, host, slug) {
   }
 }
 
-
-// Se debe modificar esta función para que se pueda ejecutar en back sin que el usuario tenga que esperar a que se envien todas las notificaciones. 
+// Se debe modificar esta función para que se pueda ejecutar en back sin que el usuario tenga que esperar a que se envien todas las notificaciones.
 export async function BulkSendNotifications(prevState, formData) {
   const slug = formData.get("slug");
   const channel = formData.get("channel");
@@ -435,8 +437,66 @@ export async function BulkSendNotifications(prevState, formData) {
       }
     }
     revalidatePath(`/events/${event.slug}?template=${event.template}`);
-    return ({message: "Notifications are on the way"})
+    return { message: "Notifications are on the way" };
   } else {
     return { message: "No pending notifications detected" };
   }
+}
+
+export async function CreateAccount(prevState, formData) {
+  const pws = formData.get("pws");
+  const pws_2 = formData.get("pws_2");
+  const salt = bcrypt.genSaltSync(10);
+  const hash = bcrypt.hashSync(pws, salt);
+  const first_name = formData.get("FName");
+  const last_name = formData.get("LName");
+  const email = formData.get("email");
+
+  if (pws != pws_2) {
+    return { message: "Password don´t match" };
+  }
+
+  const user = {
+    email: email,
+    first_name: first_name,
+    last_name: last_name,
+    password: hash,
+  };
+
+  const result = await createNewAccount(user);
+
+  if (result.insertedId) {
+    redirect("/login");
+  } else {
+    return { message: "An error happened" };
+  }
+}
+
+export async function getUserFromDb(email) {
+  const user = await getOneUser(email);
+  console.log(user);
+  return user;
+}
+
+export async function doCredentialsLogin(formData) {
+  console.log(formData);
+  try {
+    const response = await signIn("credentials", {
+      email: formData.get("email"),
+      password: formData.get("password"),
+      redirect: false,
+    });
+    return response;
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+
+export async function doSocialLogin(formData) {
+  const action = formData.get("action");
+  await signIn(action, { redirectTo: "/" });
+}
+
+export async function doLogOut() {
+  await signOut({ redirectTo: "/login" });
 }

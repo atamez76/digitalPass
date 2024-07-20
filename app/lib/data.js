@@ -38,7 +38,7 @@ export async function saveEvent(event) {
 export async function updateContactList(slug, contactList) {
   const client = await MongoClient.connect(uri);
   const collection = client.db(vars.mongoCluster).collection("Events");
-  const filter = { "slug": slug };
+  const filter = { slug: slug };
   const updateDocument = {
     $push: {
       contacts: {
@@ -58,17 +58,16 @@ export async function updateContactList(slug, contactList) {
   }
 }
 
-
 export async function RemoveContact(slug, contact) {
   const client = await MongoClient.connect(uri);
   const collection = client.db(vars.mongoCluster).collection("Events");
-  const filter = { "slug": slug };
+  const filter = { slug: slug };
   const updateDocument = {
     $pull: {
-      "contacts": {"Key": contact.Key}
+      contacts: { Key: contact.Key },
     },
   };
-  
+
   try {
     const result = await collection.updateOne(filter, updateDocument);
     await client.close();
@@ -82,27 +81,25 @@ export async function RemoveContact(slug, contact) {
 export async function UpdateEmailSent(slug, contact) {
   const client = await MongoClient.connect(uri);
   const collection = client.db(vars.mongoCluster).collection("Events");
-  const filter = { "slug": slug };
+  const filter = { slug: slug };
   const updateDocument = {
     $set: {
-      "contacts.$[elem].sent": 1 
+      "contacts.$[elem].sent": 1,
     },
   };
 
   const options = {
-    arrayFilters:[{'elem.Key':contact.Key}]
-  }
+    arrayFilters: [{ "elem.Key": contact.Key }],
+  };
 
-
-  
   try {
-    const result = await collection.updateOne(filter, updateDocument,options);
-    console.log(result)
+    const result = await collection.updateOne(filter, updateDocument, options);
+    console.log(result);
     await client.close();
     return result;
   } catch (err) {
     await client.close();
-    console.log(err)
+    console.log(err);
     return err;
   }
 }
@@ -110,24 +107,24 @@ export async function UpdateEmailSent(slug, contact) {
 export async function UpdateInvitationViewed(slug, key) {
   const client = await MongoClient.connect(uri);
   const collection = client.db(vars.mongoCluster).collection("Events");
-  const filter = { "slug": slug };
+  const filter = { slug: slug };
   const updateDocument = {
     $set: {
-      "contacts.$[elem].viewed": 1 
+      "contacts.$[elem].viewed": 1,
     },
   };
 
   const options = {
-    arrayFilters:[{'elem.Key':key}]
-  }
-  
+    arrayFilters: [{ "elem.Key": key }],
+  };
+
   try {
-    const result = await collection.updateOne(filter, updateDocument,options);
+    const result = await collection.updateOne(filter, updateDocument, options);
     await client.close();
     return result;
   } catch (err) {
     await client.close();
-    console.log(err)
+    console.log(err);
     return err;
   }
 }
@@ -135,28 +132,27 @@ export async function UpdateInvitationViewed(slug, key) {
 export async function setConfirmation(slug, key) {
   const client = await MongoClient.connect(uri);
   const collection = client.db(vars.mongoCluster).collection("Events");
-  const filter = { "slug": slug };
+  const filter = { slug: slug };
   const updateDocument = {
     $set: {
-      "contacts.$[elem].confirmed": 1 
+      "contacts.$[elem].confirmed": 1,
     },
   };
 
   const options = {
-    arrayFilters:[{'elem.Key':key}]
-  }
-  
+    arrayFilters: [{ "elem.Key": key }],
+  };
+
   try {
-    const result = await collection.updateOne(filter, updateDocument,options);
+    const result = await collection.updateOne(filter, updateDocument, options);
     await client.close();
     return result;
   } catch (err) {
     await client.close();
-    console.log(err)
+    console.log(err);
     return err;
   }
 }
-
 
 export async function getEvents() {
   const client = await MongoClient.connect(uri);
@@ -177,7 +173,26 @@ export async function getNoOfEvents() {
 export async function getSingleEvent(slug) {
   const client = await MongoClient.connect(uri);
   const collection = client.db(vars.mongoCluster).collection("Events");
-  const Event = await collection.findOne({ "slug": slug });
+  const Event = await collection.findOne({ slug: slug });
   await client.close();
   return Event;
+}
+
+export async function createNewAccount(user) {
+  const client = await MongoClient.connect(uri);
+  const collection = client.db("accounts").collection("accounts");
+  const result = await collection.insertOne(user);
+  await client.close();
+
+  return(result)
+
+ 
+}
+
+export async function getOneUser(mail) {
+  const client = await MongoClient.connect(uri);
+  const collection = client.db("accounts").collection("accounts");
+  const user = await collection.findOne({ email: mail });
+  await client.close();
+  return user;
 }

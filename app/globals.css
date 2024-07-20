@@ -136,6 +136,21 @@ main {
   transition: all 0.2s ease-out;
 }
 
+.register {
+  display: grid;
+  grid-template-columns: 25% auto;
+  gap: 1rem;
+}
+
+.register-col-1{
+  padding: 1rem ;
+}
+
+.register-col-2{
+  background: url("https://digipass-main.s3.amazonaws.com/shubham-dhage-mjl0yIdSi18-unsplash.jpg");
+  background-size: cover;
+}
+
 .col-2 {
   overflow-x: scroll;
   width: 95%;
@@ -191,6 +206,15 @@ main {
   display: flex;
   gap: 5%;
   align-self: center;
+}
+
+.controls_column {
+  height: 4rem;
+  width: 90%;
+  display: flex;
+  gap: 5%;
+  align-self: center;
+  flex-direction: column;
 }
 
 
@@ -389,6 +413,8 @@ td span {
   margin: 1rem auto;
   visibility: visible;
 }
+
+
 
 
 

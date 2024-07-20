@@ -9,24 +9,30 @@ export default function MainBody({ children }) {
   const [navCollapsed, setNavCollapsed] = useState(null);
   const clearMenu = useMenuSelectedStore((state) => state.clearMenuSelected);
 
-  const handleCollapse = (state) =>{
-    setNavCollapsed(state)
-  }
+  const handleCollapse = (state) => {
+    setNavCollapsed(state);
+  };
 
-  const handleclick = () =>{
-    clearMenu();
-  }
-
-  useEffect(()=>{
-    document.body.addEventListener('click', handleclick);
-    return () => {
-      document.body.removeEventListener('click', handleclick);
+  const handleclick = (event) => {
+    if (event.target.value != "logout") {
+      clearMenu();
     }
-  },[])
-  
+  };
+
+  useEffect(() => {
+    document.body.addEventListener("click", handleclick);
+    return () => {
+      document.body.removeEventListener("click", handleclick);
+    };
+  }, []);
+
   return (
-    <div className={!navCollapsed ? "main-wrapper-extended": "main-wrapper-collapsed"}>
-      <NavBar onCollapse = {handleCollapse} />
+    <div
+      className={
+        !navCollapsed ? "main-wrapper-extended" : "main-wrapper-collapsed"
+      }
+    >
+      <NavBar onCollapse={handleCollapse} />
       <MainLayOut children={children} />
     </div>
   );

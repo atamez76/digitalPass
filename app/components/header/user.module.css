@@ -17,7 +17,7 @@
 
 .user_menu{
     position: absolute;
-    transform: translate(10%, 50%);
+    transform: translate(0px, 80%);
     background-color: var(--btn-color-secondary);
     border-radius: 2px;
     text-decoration: none;

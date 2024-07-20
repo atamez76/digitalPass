@@ -1,5 +1,6 @@
 "use client";
 
+import LogOutForm from "../forms/log-out-Form";
 import MenuItem from "./menu-item";
 import classes from "./user.module.css";
 import { useMenuSelectedStore } from "@/app/lib/store";
@@ -21,16 +22,16 @@ export default function User({ user }) {
           <span className="material-symbols-outlined">keyboard_arrow_down</span>
         </button>
       </div>
-      <div className={classes.user_menu}>
-        <ul>
-          {menu === "user" && (
+      {menu === "user" && (
+        <div className={classes.user_menu}>
+          <ul>
             <>
               <MenuItem value={"settings"} link={"/user-settings"} />
-              <MenuItem value={"Logout"} link={""} />
             </>
-          )}
-        </ul>
-      </div>
+          </ul>
+          <LogOutForm />
+        </div>
+      )}
     </>
   );
 }

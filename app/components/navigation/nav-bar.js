@@ -8,16 +8,18 @@ import { useEffect } from "react";
 
 function ExtendedNav() {
   return (
-    <nav>
-      <ul className={classes.navlist_extended}>
-        <li className={classes.navlink_extended}>
-          <NavLinkExtended name={"My Events"} link={"/events"} />
-        </li>
-        <li className={classes.navlink_extended}>
-          <NavLinkExtended name={"Gallery"} link={"/content-store"} />
-        </li>
-      </ul>
-    </nav>
+    <>
+      <nav>
+        <ul className={classes.navlist_extended}>
+          <li className={classes.navlink_extended}>
+            <NavLinkExtended name={"My Events"} link={"/events"} />
+          </li>
+          <li className={classes.navlink_extended}>
+            <NavLinkExtended name={"Gallery"} link={"/content-store"} />
+          </li>
+        </ul>
+      </nav>
+    </>
   );
 }
 
