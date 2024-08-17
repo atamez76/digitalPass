@@ -446,8 +446,8 @@ export async function BulkSendNotifications(prevState, formData) {
 export async function CreateAccount(prevState, formData) {
   const pws = formData.get("pws");
   const pws_2 = formData.get("pws_2");
-  const salt = bcrypt.genSaltSync(10);
-  const hash = bcrypt.hashSync(pws, salt);
+  /*  const salt = bcrypt.genSaltSync(10); */
+  const hash = await bcrypt.hash(pws, 5);
   const first_name = formData.get("FName");
   const last_name = formData.get("LName");
   const email = formData.get("email");
@@ -457,44 +457,32 @@ export async function CreateAccount(prevState, formData) {
   }
 
   const user = {
+    name: first_name,
     email: email,
-    first_name: first_name,
-    last_name: last_name,
     password: hash,
   };
 
   const result = await createNewAccount(user);
-
-  if (result.insertedId) {
+  if (result) {
     redirect("/login");
   } else {
     return { message: "An error happened" };
   }
 }
 
-export async function getUserFromDb(email) {
-  const user = await getOneUser(email);
-  console.log(user);
-  return user;
-}
-
 export async function doCredentialsLogin(formData) {
-  console.log(formData);
-  try {
-    const response = await signIn("credentials", {
-      email: formData.get("email"),
-      password: formData.get("password"),
-      redirect: false,
-    });
-    return response;
-  } catch (error) {
-    throw new Error(error);
-  }
+  const response = await signIn("credentials", {
+    email: formData.get("email"),
+    password: formData.get("password"),
+    redirectTo: "/",
+  });
+ 
+  return response;
 }
 
 export async function doSocialLogin(formData) {
   const action = formData.get("action");
-  await signIn(action, { redirectTo: "/" });
+  await signIn(action, { redirect:true, redirectTo:"/"});
 }
 
 export async function doLogOut() {

@@ -180,7 +180,7 @@ export async function getSingleEvent(slug) {
 
 export async function createNewAccount(user) {
   const client = await MongoClient.connect(uri);
-  const collection = client.db("accounts").collection("accounts");
+  const collection = client.db("nextjs_digital_pass").collection("users");
   const result = await collection.insertOne(user);
   await client.close();
 
@@ -192,7 +192,13 @@ export async function createNewAccount(user) {
 export async function getOneUser(mail) {
   const client = await MongoClient.connect(uri);
   const collection = client.db("accounts").collection("accounts");
-  const user = await collection.findOne({ email: mail });
+  const result = await collection.findOne({ email: mail });
+  const user = {
+    name:result.first_name,
+    email:result.email,
+    password:result.password
+  }
+
   await client.close();
   return user;
 }

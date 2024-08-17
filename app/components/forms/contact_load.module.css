@@ -43,7 +43,6 @@
 }
 
 
-
 .btn_1:hover, .btn_2:hover,.btn_3:hover,
 .btn_1:focus, .btn_2:focus, .btn_3:focus {
   background: #b3b9c6;
@@ -58,6 +57,27 @@
 
 .btn:focus {
   background: #b3b9c6;
+  box-shadow: var(--box-shadow-selected);
+}
+
+.btn_social_auth{
+  width: 80%;
+  padding: 1rem 0;
+  border: solid 2px var(--btn-color-secondary);
+  border-radius: 5px;
+  background-color: whitesmoke;
+  font-weight: 800;
+  margin: 1rem 0;
+}
+
+.btn_social_auth_content{
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn_social_auth:hover{
   box-shadow: var(--box-shadow-selected);
 }
 
@@ -128,6 +148,8 @@
   flex-direction: column;
   gap: .5rem;
   color: var(--font-color-primary);
+  width: 80%;
+  margin: 0 auto ;
 }
 
 .register_form h2{
@@ -147,3 +169,14 @@
   border-radius: 5px;
 }
 
+.log_out_form{
+  text-align: center;
+ 
+}
+
+.log_out_form button{
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: .5rem 0;
+}

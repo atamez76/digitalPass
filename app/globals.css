@@ -140,6 +140,25 @@ main {
   display: grid;
   grid-template-columns: 25% auto;
   gap: 1rem;
+  height: 100vh;
+  background-color: whitesmoke;
+}
+
+.register-login-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto;
+  gap: 1.5rem;
+}
+
+.register-login-form form{
+  width: 80%;
+  text-align: center;
+}
+
+.link{
+  color: rgb(79, 103, 236);
 }
 
 .register-col-1{
@@ -155,6 +174,7 @@ main {
   overflow-x: scroll;
   width: 95%;
   margin: 0 auto;
+  min-width: 40rem;
 }
 
 .page_header {
@@ -162,7 +182,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1rem;
+  margin: 1rem .5rem;
 }
 
 .Fill {
@@ -412,6 +432,39 @@ td span {
   border: 1px dashed var(--font-color-primary);
   margin: 1rem auto;
   visibility: visible;
+}
+
+.break-separator{
+  width: 80%;
+  display: flex;
+  border: none;
+}
+
+.break-separator span{
+  margin: 0 .5rem
+}
+
+.break-separator::before{
+  content: "";
+  border-bottom: 1px solid var(--font-color-primary);
+  flex: 1 0 auto;
+  height: .5em;
+  margin: 0
+}
+
+.break-separator::after{
+  content: "";
+  border-bottom: 1px solid var(--font-color-primary);
+  flex: 1 0 auto;
+  height: .5em;
+  margin: 0
+}
+
+.data_structure{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 40%;
 }
 
 

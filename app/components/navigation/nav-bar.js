@@ -17,6 +17,9 @@ function ExtendedNav() {
           <li className={classes.navlink_extended}>
             <NavLinkExtended name={"Gallery"} link={"/content-store"} />
           </li>
+          <li className={classes.navlink_extended}>
+            <NavLinkExtended name={"Structures"} link={"/structures"} />
+          </li>
         </ul>
       </nav>
     </>
@@ -41,6 +44,17 @@ function CollapsedNav() {
             icon={
               <span className="material-symbols-outlined">
                 gallery_thumbnail
+              </span>
+            }
+          />
+        </li>
+        <li className={classes.navlink_collapsed}>
+          <NavLinkCollapsed
+            name={"Structures"}
+            link={"/structures"}
+            icon={
+              <span className="material-symbols-outlined">
+                dataset
               </span>
             }
           />

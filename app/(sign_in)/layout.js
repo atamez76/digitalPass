@@ -15,10 +15,10 @@ export default async function SignIn_Layout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="register">
+        <div className="register">
           <div className="register-col-1">{children}</div>
           <div className="register-col-2"></div>
-        </main>
+        </div>
       </body>
     </html>
   );
